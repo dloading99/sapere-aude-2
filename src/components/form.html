@@ -1,0 +1,98 @@
+            <!-- SEZIONE 8: FORM CONTATTO -->
+            <section id="contatto" class="py-24 px-6 bg-white">
+                <div class="container mx-auto max-w-2xl">
+                    <div class="text-center mb-10">
+                        <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3">
+                            Contatto
+                        </p>
+                        <h2 class="font-serif text-4xl text-petrol mb-4">
+                            Parlami del tuo caso in 60 secondi.
+                        </h2>
+                        <p class="text-petrol/60 text-sm md:text-base">
+                            Alcuni campi sono già compilati in base alle tue scelte. Se vuoi, puoi modificarli o aggiungere dettagli.
+                        </p>
+                    </div>
+
+                    <form class="space-y-6" @submit.prevent="submitForm">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-petrol/50 mb-1">Chi sei</label>
+                                <input type="text"
+                                       :value="role === 'genitore' ? 'Genitore' : 'Studente'"
+                                       disabled
+                                       class="w-full p-3 bg-cream border border-petrol/10 rounded text-petrol font-medium cursor-not-allowed">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-petrol/50 mb-1">Livello di studio</label>
+                                <select x-model="selectedLevel"
+                                        class="w-full p-3 bg-surface border border-petrol/20 rounded text-petrol focus:border-coral focus:ring-1 focus:ring-coral outline-none">
+                                    <option value="">Seleziona livello...</option>
+                                    <option value="elementari">Elementari</option>
+                                    <option value="medie">Medie</option>
+                                    <option value="superiori">Superiori</option>
+                                    <option value="universita">Università</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-petrol/50 mb-1">Principali difficoltà</label>
+                            <textarea rows="3"
+                                      x-model="formProblems"
+                                      class="w-full p-3 bg-surface border border-petrol/20 rounded text-petrol focus:border-coral focus:ring-1 focus:ring-coral outline-none placeholder-petrol/30"
+                                      placeholder="Es. Testi lunghi che non restano in testa, difficoltà a organizzare il tempo, blocco quando devo scrivere..."></textarea>
+                            <p class="text-xs text-petrol/40 mt-1 text-right">
+                                Testo suggerito dalle tue scelte. Se vuoi, aggiungi materia, classe/anno ed esempi concreti delle difficoltà.
+                            </p>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-petrol/50 mb-1">Obiettivo principale</label>
+                            <input type="text"
+                                   x-model="formGoal"
+                                   class="w-full p-3 bg-surface border border-petrol/20 rounded text-petrol focus:border-coral focus:ring-1 focus:ring-coral outline-none"
+                                   placeholder="Es. Meno ansia alle verifiche / esami, più autonomia nello studio, voti più stabili...">
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-petrol/50 mb-1">Nome</label>
+                                <input type="text" required
+                                       class="w-full p-3 bg-surface border border-petrol/20 rounded text-petrol focus:border-coral focus:ring-1 focus:ring-coral outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-petrol/50 mb-1">Email o Telefono</label>
+                                <input type="text" required
+                                       class="w-full p-3 bg-surface border border-petrol/20 rounded text-petrol focus:border-coral focus:ring-1 focus:ring-coral outline-none">
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                                class="w-full bg-petrol text-white py-4 rounded-lg font-medium text-lg hover:bg-petrol/90 transition-all shadow-lg mt-4">
+                            Invia richiesta per la prima sessione
+                        </button>
+                    </form>
+
+                    <div class="mt-12 text-center pt-10 border-t border-petrol/10">
+                        <p class="mb-4 text-petrol/70 text-sm">
+                            Preferisci scrivermi direttamente?
+                        </p>
+                        <a :href="whatsappLink" target="_blank"
+                           class="inline-flex items-center gap-2 text-green-600 font-bold hover:underline text-lg">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                            </svg>
+                            Scrivimi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- STICKY CTA -->
+        <div x-show="showStickyCTA && role && selectedLevel"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 translate-y-20"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
