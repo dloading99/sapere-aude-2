@@ -62,3 +62,9 @@ export const attemptsTexts = {
       'Finora hai improvvisato senza una vera strategia: paradossalmente è una buona notizia. Possiamo impostare un metodo da zero, senza dover prima smontare abitudini che non funzionano.'
   }
 };
+
+export const attemptsRegistry = {
+  attemptsOptions,
+  attemptsMap,
+  attemptsTexts
+};

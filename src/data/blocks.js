@@ -5,6 +5,11 @@ export const blocksOptions = [
   { id: 'scrivere', label: 'Scrivere in modo chiaro (temi, saggi, tesi)' }
 ];
 
+const labelsById = blocksOptions.reduce((acc, item) => {
+  acc[item.id] = item.label;
+  return acc;
+}, {});
+
 export const blocksInfoSingles = {
   capire: {
     titleParent: 'Fa fatica a capire davvero quello che legge',
@@ -279,4 +284,11 @@ export const blocksInfoCombos = {
     solutionStudent:
       'Ricostruiamo l’intero sistema di studio: comprensione, organizzazione, preparazione alle prove e scrittura. Non si tratta di “metterci più forza di volontà”, ma di cambiare la struttura con cui studi.'
   }
+};
+
+export const blocksRegistry = {
+  options: blocksOptions,
+  singles: blocksInfoSingles,
+  combos: blocksInfoCombos,
+  labelsById
 };

@@ -62,3 +62,9 @@ export const levelsContent = {
     ]
   }
 };
+
+export const levelsRegistry = {
+  levelLabels,
+  levelSolutionTails,
+  levelsContent
+};
