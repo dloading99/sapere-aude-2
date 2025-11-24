@@ -1,0 +1,39 @@
+        <!-- HERO -->
+        <section class="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+            <!-- decorazioni -->
+            <div class="absolute top-1/4 left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute bottom-1/4 right-10 w-80 h-80 bg-petrol/5 rounded-full blur-3xl -z-10"></div>
+
+            <h1 class="font-serif text-5xl md:text-7xl font-medium leading-tight mb-8 max-w-4xl mx-auto text-petrol">
+                Il problema è capire… <br>
+                <span class="italic text-coral">o ricordare?</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-petrol/80 max-w-2xl mx-auto mb-12 font-light">
+                In pochi passaggi capiamo se il blocco è nei contenuti, nel metodo o nella gestione dell’ansia. Senza giudizi, con un percorso chiaro.
+            </p>
+
+            <!-- Selezione ruolo -->
+            <div class="flex flex-col md:flex-row gap-4 w-full max-w-xl mb-6">
+                <button
+                    @click="setRole('genitore')"
+                    :class="role === 'genitore'
+                        ? 'bg-petrol text-cream ring-4 ring-accent/30'
+                        : 'bg-white text-petrol border border-petrol/20 hover:border-coral hover:text-coral'"
+                    class="flex-1 py-5 px-8 rounded-lg text-lg font-medium transition-all duration-300 shadow-sm">
+                    Sono un Genitore
+                </button>
+                <button
+                    @click="setRole('studente')"
+                    :class="role === 'studente'
+                        ? 'bg-petrol text-cream ring-4 ring-accent/30'
+                        : 'bg-white text-petrol border border-petrol/20 hover:border-coral hover:text-coral'"
+                    class="flex-1 py-5 px-8 rounded-lg text-lg font-medium transition-all duration-300 shadow-sm">
+                    Sono uno Studente
+                </button>
+            </div>
+
+            <p class="text-xs tracking-[0.2em] uppercase text-petrol/60">
+                1 • Scegli chi sei · 2 • Scegli il livello · 3 • Racconti dove ti blocchi
+            </p>
+        </section>

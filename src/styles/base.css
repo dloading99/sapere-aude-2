@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FDF6EF; }
+::-webkit-scrollbar-thumb { background: #F3B27C; border-radius: 4px; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+[x-cloak] { display: none !important; }

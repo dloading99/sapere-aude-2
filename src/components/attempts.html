@@ -1,0 +1,34 @@
+            <!-- SEZIONE 3: COSA HAI GIÀ PROVATO -->
+            <section class="py-20 bg-surface border-y border-petrol/5">
+                <div class="container mx-auto max-w-4xl px-6 text-center">
+                    <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3">
+                        Passo 4 · Tentativi precedenti
+                    </p>
+                    <h2 class="font-serif text-3xl md:text-4xl mb-10 text-petrol">
+                        <span x-text="role === 'genitore'
+                            ? 'Cosa avete già provato per migliorare la situazione?'
+                            : 'Cosa hai già provato per migliorare la situazione?'"></span>
+                    </h2>
+
+                    <div class="flex flex-wrap justify-center gap-3 mb-12">
+                        <template x-for="attempt in attemptsOptions" :key="attempt">
+                            <button
+                                @click="toggleAttempts(attempt)"
+                                :class="selectedAttempts.includes(attempt)
+                                    ? 'bg-petrol text-white border-petrol'
+                                    : 'bg-white border-petrol/20 text-petrol/70 hover:border-petrol hover:text-petrol'"
+                                class="py-3 px-6 rounded-full border transition-all duration-200 font-medium text-sm md:text-base">
+                                <span x-text="attempt"></span>
+                            </button>
+                        </template>
+                    </div>
+
+                    <div class="bg-cream p-8 rounded-xl border border-petrol/10 max-w-2xl mx-auto"
+                         x-show="selectedAttempts.length > 0" x-transition>
+                        <span class="text-xs font-bold tracking-[0.24em] uppercase text-petrol/60 mb-2 block">
+                            Che cosa significa in pratica
+                        </span>
+                        <p class="text-lg font-serif italic text-petrol" x-text="attemptsCopy"></p>
+                    </div>
+                </div>
+            </section>

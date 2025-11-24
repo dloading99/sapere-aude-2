@@ -1,0 +1,52 @@
+            <!-- SEZIONE 4: OBIETTIVI -->
+            <section class="py-20 md:py-28 px-6">
+                <div class="container mx-auto max-w-5xl">
+                    <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3 text-center">
+                        Passo 5 · Obiettivi
+                    </p>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-12 text-center text-petrol">
+                        <span x-text="role === 'genitore'
+                            ? 'Fra 2–3 mesi, cosa vorresti fosse diverso per tuo figlio?'
+                            : 'Fra 2–3 mesi, cosa vorresti fosse diverso per te?'"></span>
+                    </h2>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <template x-for="goal in goalsOptions" :key="goal.id">
+                            <button
+                                @click="toggleSelection('goals', goal.id)"
+                                :class="selectedGoals.includes(goal.id)
+                                    ? 'bg-accent/20 border-accent'
+                                    : 'bg-white border-petrol/10 hover:border-accent'"
+                                class="text-left p-6 rounded-xl border transition-all duration-200 h-full flex flex-col justify-between group hover:shadow-md">
+                                <div>
+                                    <span class="block font-serif text-xl mb-2 group-hover:text-coral transition-colors"
+                                          x-text="goal.label"></span>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-petrol/5">
+                                    <span class="text-[10px] text-petrol/60 uppercase tracking-[0.2em] font-bold">
+                                        Obiettivo concreto
+                                    </span>
+                                    <p class="text-sm mt-1 text-petrol font-medium" x-text="goal.promise"></p>
+                                </div>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEZIONE 5: METODO -->
+            <section class="py-24 bg-petrol text-cream px-6 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+
+                <div class="container mx-auto max-w-6xl relative z-10">
+                    <div class="text-center mb-16">
+                        <p class="text-xs font-semibold tracking-[0.24em] uppercase text-cream/60 mb-3">
+                            Metodo
+                        </p>
+                        <h2 class="font-serif text-4xl md:text-6xl mb-6 text-surface">
+                            Non faccio solo ripetizioni. <br>
+                            <span class="text-accent italic">Alleno il modo di pensare.</span>
+                        </h2>
+                        <p class="text-xl text-cream/80 max-w-2xl mx-auto font-light"
+                           x-text="role === 'genitore'
+                                ? 'Così tuo figlio non impara solo la lezione di domani, ma un metodo che resta anche quando cambi materia e insegnante.'
