@@ -49,106 +49,187 @@
     <!-- MAIN -->
     <main class="pt-20">
 
-        <!-- HERO -->
-        <section class="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-            <!-- decorazioni -->
-            <div class="absolute top-1/4 left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10"></div>
-            <div class="absolute bottom-1/4 right-10 w-80 h-80 bg-petrol/5 rounded-full blur-3xl -z-10"></div>
+        <!-- HERO → ambiente mentale iniziale -->
+        <section class="relative min-h-[90vh] px-6 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-cream via-white to-[#f7efe4] opacity-90 -z-10"></div>
+            <div class="absolute -left-24 top-10 w-96 h-96 bg-accent/15 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute right-0 top-1/3 w-[520px] h-[520px] bg-petrol/7 rounded-full blur-[120px] -z-10"></div>
 
-            <h1 class="font-serif text-5xl md:text-7xl font-medium leading-tight mb-8 max-w-4xl mx-auto text-petrol">
-                Il problema è capire… <br>
-                <span class="italic text-coral">o ricordare?</span>
-            </h1>
+            <div class="container mx-auto grid md:grid-cols-12 gap-10 items-center pt-16 pb-10">
+                <div class="md:col-span-5 space-y-8">
+                    <div class="inline-flex items-center gap-2 text-xs tracking-[0.24em] uppercase text-petrol/60 bg-white/70 backdrop-blur px-3 py-2 rounded-full border border-petrol/10">
+                        <span>Ambiente mentale</span>
+                        <span class="w-2 h-2 rounded-full bg-coral/80"></span>
+                        <span>da caos a struttura</span>
+                    </div>
 
-            <p class="text-lg md:text-xl text-petrol/80 max-w-2xl mx-auto mb-12 font-light">
-                In pochi passaggi capiamo se il blocco è nei contenuti, nel metodo o nella gestione dell’ansia. Senza giudizi, con un percorso chiaro.
-            </p>
+                    <div class="space-y-4">
+                        <h1 class="font-serif text-5xl md:text-6xl leading-tight text-petrol">
+                            Quando studi non basta ricordare.<br>
+                            <span class="italic text-coral">Serve una mappa che ti accompagna.</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-petrol/85 font-light">
+                            Ti porto dentro il mio modo di pensare: prima capire dove si inceppa la mente, poi riorganizzare, poi allenare. Un percorso guidato, non un elenco di servizi.
+                        </p>
+                    </div>
 
-            <!-- Selezione ruolo -->
-            <div class="flex flex-col md:flex-row gap-4 w-full max-w-xl mb-6">
-                <button
-                    @click="setRole('genitore')"
-                    :class="role === 'genitore'
-                        ? 'bg-petrol text-cream ring-4 ring-accent/30'
-                        : 'bg-white text-petrol border border-petrol/20 hover:border-coral hover:text-coral'"
-                    class="flex-1 py-5 px-8 rounded-lg text-lg font-medium transition-all duration-300 shadow-sm">
-                    Sono un Genitore
-                </button>
-                <button
-                    @click="setRole('studente')"
-                    :class="role === 'studente'
-                        ? 'bg-petrol text-cream ring-4 ring-accent/30'
-                        : 'bg-white text-petrol border border-petrol/20 hover:border-coral hover:text-coral'"
-                    class="flex-1 py-5 px-8 rounded-lg text-lg font-medium transition-all duration-300 shadow-sm">
-                    Sono uno Studente
-                </button>
+                    <div class="space-y-3">
+                        <p class="text-xs uppercase tracking-[0.2em] text-petrol/60">Sequenza cucita su di te</p>
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-[1px] bg-coral/80"></span>
+                                <p class="text-petrol font-medium">Ruolo → Livello → Dove si blocca la mente</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-[1px] bg-coral/60"></span>
+                                <p class="text-petrol/80">Tentativi fatti → Obiettivi → Metodo</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-[1px] bg-coral/40"></span>
+                                <p class="text-petrol/70">Percorso sul tuo livello → Prima sessione → Contatto</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 relative">
+                    <div class="absolute inset-4 rounded-[32px] bg-gradient-to-br from-white/80 via-cream/70 to-white/50 blur-xl -z-10"></div>
+                    <div class="relative rounded-[28px] border border-petrol/10 shadow-2xl bg-white/90 backdrop-blur p-8 md:p-10 overflow-hidden">
+                        <div class="absolute -right-6 -top-10 w-32 h-32 bg-accent/20 rounded-full blur-3xl"></div>
+                        <div class="absolute -left-10 bottom-0 w-48 h-48 bg-petrol/10 rounded-full blur-3xl"></div>
+
+                        <div class="flex items-start justify-between gap-4 mb-6">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.24em] text-petrol/60 mb-2">Atto I · Ascolto</p>
+                                <h2 class="font-serif text-3xl text-petrol">Dimmi chi sei, adatto la lente.</h2>
+                                <p class="text-petrol/70 text-sm mt-2">Ogni scelta attiva un diverso tono di voce e una diversa mappa mentale.</p>
+                            </div>
+                            <div class="hidden md:flex flex-col items-end text-right text-[10px] uppercase tracking-[0.2em] text-petrol/50">
+                                <span>Scorrevolezza</span>
+                                <span class="w-12 h-[1px] bg-petrol/30 my-1"></span>
+                                <span>Zero giudizi</span>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-5 gap-6 items-center">
+                            <div class="md:col-span-3 space-y-4">
+                                <p class="text-xs uppercase tracking-[0.2em] text-petrol/60">Scegli il tuo ruolo</p>
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    <button
+                                        @click="setRole('genitore')"
+                                        :class="role === 'genitore'
+                                            ? 'bg-petrol text-cream ring-4 ring-accent/30 shadow-lg'
+                                            : 'bg-white text-petrol border border-petrol/20 hover:border-coral hover:text-coral'"
+                                        class="flex-1 py-4 px-6 rounded-xl text-lg font-medium transition-all duration-300">
+                                        Sono un Genitore
+                                    </button>
+                                    <button
+                                        @click="setRole('studente')"
+                                        :class="role === 'studente'
+                                            ? 'bg-petrol text-cream ring-4 ring-accent/30 shadow-lg'
+                                            : 'bg-white text-petrol border border-petrol/20 hover:border-coral hover:text-coral'"
+                                        class="flex-1 py-4 px-6 rounded-xl text-lg font-medium transition-all duration-300">
+                                        Sono uno Studente
+                                    </button>
+                                </div>
+
+                                <div class="flex items-center gap-3 text-sm text-petrol/70 bg-surface/70 border border-petrol/10 rounded-xl px-4 py-3">
+                                    <div class="w-8 h-8 rounded-full bg-coral/10 text-coral flex items-center justify-center font-serif">i</div>
+                                    <p>Scegli e ti porto direttamente al livello di studio per continuare la conversazione.</p>
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <div class="relative border border-petrol/10 rounded-2xl p-4 bg-gradient-to-b from-white/90 to-cream/60 shadow-sm overflow-hidden">
+                                    <div class="absolute -right-6 top-6 w-16 h-16 bg-coral/20 rounded-full blur-2xl"></div>
+                                    <p class="text-[11px] uppercase tracking-[0.2em] text-petrol/60 mb-2">Anteprima tono</p>
+                                    <p class="font-serif text-lg text-petrol mb-2" x-text="role ? (role === 'genitore' ? 'Parlerò a te come guida, non come giudice.' : 'Parlerò a te come pari, senza paternalismi.') : 'Seleziona per ascoltare il tono.'"></p>
+                                    <p class="text-xs text-petrol/60">Stessa rigorosità, due modalità di ascolto.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 grid md:grid-cols-3 gap-4 text-left">
+                            <div class="border border-petrol/10 rounded-xl p-4 bg-surface/60">
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-petrol/50 mb-1">Caos</p>
+                                <p class="text-petrol/80 text-sm">Blocchi, ansia, tentativi scollegati.</p>
+                            </div>
+                            <div class="border border-petrol/10 rounded-xl p-4 bg-white/80 shadow-sm">
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-petrol/50 mb-1">Mappa</p>
+                                <p class="text-petrol/80 text-sm">Ruolo e livello definiscono il linguaggio.</p>
+                            </div>
+                            <div class="border border-petrol/10 rounded-xl p-4 bg-cream">
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-petrol/50 mb-1">Chiarezza</p>
+                                <p class="text-petrol/80 text-sm">Obiettivi concreti e primo passo guidato.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <p class="text-xs tracking-[0.2em] uppercase text-petrol/60">
-                1 • Scegli chi sei · 2 • Scegli il livello · 3 • Racconti dove ti blocchi
-            </p>
         </section>
 
         <!-- SELEZIONE LIVELLO (subito dopo ruolo) -->
         <section id="level-select" class="py-16 md:py-20 px-6 border-t border-petrol/5 bg-surface/60">
-            <div class="container mx-auto max-w-4xl">
-                <div class="text-center mb-10">
-                    <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3">
-                        Passo 2 · Livello di studio
-                    </p>
-                    <h2 class="font-serif text-3xl md:text-4xl text-petrol mb-3">
-                        Per chi è questo percorso?
-                    </h2>
-                    <p class="text-petrol/70 max-w-2xl mx-auto text-sm md:text-base">
-                        Seleziona il livello scolastico attuale. Da qui in poi il linguaggio e gli esempi saranno cuciti su questa scelta.
-                    </p>
+            <div class="container mx-auto max-w-6xl">
+                <div class="grid md:grid-cols-3 gap-10 items-center mb-10">
+                    <div class="md:col-span-1 space-y-3">
+                        <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60">Atto II · Messa a fuoco</p>
+                        <h2 class="font-serif text-3xl md:text-4xl text-petrol">Per chi sto disegnando il percorso?</h2>
+                        <p class="text-petrol/70 text-sm md:text-base">Scelgo subito la lente giusta. Il tono, gli esempi e il ritmo cambiano con la tua scelta: bambinɜ, medie, superiori, università.</p>
+                        <div class="flex items-center gap-3 text-sm text-petrol/70 bg-white/80 border border-petrol/10 rounded-xl px-4 py-3">
+                            <span class="w-8 h-8 rounded-full bg-petrol text-cream flex items-center justify-center text-xs uppercase tracking-[0.18em]">02</span>
+                            <p>È il primo punto in cui la pagina “ascolta” e cambia registro.</p>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <button
+                                @click="setLevel('elementari')"
+                                :class="selectedLevel === 'elementari'
+                                    ? 'bg-petrol text-cream border-petrol shadow-lg scale-[1.02]'
+                                    : 'bg-white text-petrol border border-petrol/15 hover:border-coral hover:text-coral'"
+                                class="py-4 px-3 rounded-xl text-center text-sm font-medium transition-all duration-200">
+                                <span class="block text-[0.7rem] uppercase tracking-[0.18em] text-petrol/50 mb-1">LIVELLO</span>
+                                <span class="font-serif text-lg">Elementari</span>
+                            </button>
+
+                            <button
+                                @click="setLevel('medie')"
+                                :class="selectedLevel === 'medie'
+                                    ? 'bg-petrol text-cream border-petrol shadow-lg scale-[1.02]'
+                                    : 'bg-white text-petrol border border-petrol/15 hover:border-coral hover:text-coral'"
+                                class="py-4 px-3 rounded-xl text-center text-sm font-medium transition-all duration-200">
+                                <span class="block text-[0.7rem] uppercase tracking-[0.18em] text-petrol/50 mb-1">LIVELLO</span>
+                                <span class="font-serif text-lg">Medie</span>
+                            </button>
+
+                            <button
+                                @click="setLevel('superiori')"
+                                :class="selectedLevel === 'superiori'
+                                    ? 'bg-petrol text-cream border-petrol shadow-lg scale-[1.02]'
+                                    : 'bg-white text-petrol border border-petrol/15 hover:border-coral hover:text-coral'"
+                                class="py-4 px-3 rounded-xl text-center text-sm font-medium transition-all duration-200">
+                                <span class="block text-[0.7rem] uppercase tracking-[0.18em] text-petrol/50 mb-1">LIVELLO</span>
+                                <span class="font-serif text-lg">Superiori</span>
+                            </button>
+
+                            <button
+                                @click="setLevel('universita')"
+                                :class="selectedLevel === 'universita'
+                                    ? 'bg-petrol text-cream border-petrol shadow-lg scale-[1.02]'
+                                    : 'bg-white text-petrol border border-petrol/15 hover:border-coral hover:text-coral'"
+                                class="py-4 px-3 rounded-xl text-center text-sm font-medium transition-all duration-200">
+                                <span class="block text-[0.7rem] uppercase tracking-[0.18em] text-petrol/50 mb-1">LIVELLO</span>
+                                <span class="font-serif text-lg">Università</span>
+                            </button>
+                        </div>
+
+                        <p class="mt-6 text-xs text-center text-petrol/60">
+                            Le prossime sezioni si adatteranno a <span x-text="levelLabelForHuman() || 'il livello che scegli'"></span>.
+                        </p>
+                    </div>
                 </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-                    <button
-                        @click="setLevel('elementari')"
-                        :class="selectedLevel === 'elementari'
-                            ? 'bg-petrol text-cream border-petrol shadow-lg scale-[1.02]'
-                            : 'bg-white text-petrol border border-petrol/15 hover:border-coral hover:text-coral'"
-                        class="py-4 px-3 rounded-xl text-center text-sm font-medium transition-all duration-200">
-                        <span class="block text-[0.7rem] uppercase tracking-[0.18em] text-petrol/50 mb-1">LIVELLO</span>
-                        <span class="font-serif text-lg">Elementari</span>
-                    </button>
-
-                    <button
-                        @click="setLevel('medie')"
-                        :class="selectedLevel === 'medie'
-                            ? 'bg-petrol text-cream border-petrol shadow-lg scale-[1.02]'
-                            : 'bg-white text-petrol border border-petrol/15 hover:border-coral hover:text-coral'"
-                        class="py-4 px-3 rounded-xl text-center text-sm font-medium transition-all duration-200">
-                        <span class="block text-[0.7rem] uppercase tracking-[0.18em] text-petrol/50 mb-1">LIVELLO</span>
-                        <span class="font-serif text-lg">Medie</span>
-                    </button>
-
-                    <button
-                        @click="setLevel('superiori')"
-                        :class="selectedLevel === 'superiori'
-                            ? 'bg-petrol text-cream border-petrol shadow-lg scale-[1.02]'
-                            : 'bg-white text-petrol border border-petrol/15 hover:border-coral hover:text-coral'"
-                        class="py-4 px-3 rounded-xl text-center text-sm font-medium transition-all duration-200">
-                        <span class="block text-[0.7rem] uppercase tracking-[0.18em] text-petrol/50 mb-1">LIVELLO</span>
-                        <span class="font-serif text-lg">Superiori</span>
-                    </button>
-
-                    <button
-                        @click="setLevel('universita')"
-                        :class="selectedLevel === 'universita'
-                            ? 'bg-petrol text-cream border-petrol shadow-lg scale-[1.02]'
-                            : 'bg-white text-petrol border border-petrol/15 hover:border-coral hover:text-coral'"
-                        class="py-4 px-3 rounded-xl text-center text-sm font-medium transition-all duration-200">
-                        <span class="block text-[0.7rem] uppercase tracking-[0.18em] text-petrol/50 mb-1">LIVELLO</span>
-                        <span class="font-serif text-lg">Università</span>
-                    </button>
-                </div>
-
-                <p class="mt-6 text-xs text-center text-petrol/60">
-                    Le prossime sezioni si adatteranno a <span x-text="levelLabelForHuman() || 'il livello che scegli'"></span>.
-                </p>
             </div>
         </section>
 
@@ -164,15 +245,15 @@
                     <!-- colonna sinistra: scelte -->
                     <div>
                         <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3">
-                            Passo 3 · Blocchi nello studio
+                            Atto III · Dove si inceppa il pensiero
                         </p>
                         <h2 class="font-serif text-4xl md:text-5xl mb-4 text-petrol">
                             <span x-text="role === 'genitore'
-                                ? 'Dove si blocca di più tuo figlio quando studia?'
-                                : 'Dove ti blocchi di più quando studi?'"></span>
+                                ? 'Quando tuo figlio si blocca, è sul contenuto o sulla mente?'
+                                : 'Quando ti blocchi, è sul contenuto o sulla mente?'"></span>
                         </h2>
                         <p class="text-petrol/60 mb-8 uppercase tracking-[0.18em] text-xs font-semibold">
-                            Puoi selezionare una o più opzioni
+                            Puoi selezionare una o più opzioni: la mappa si ricompone in base alle tue scelte.
                         </p>
 
                         <div class="flex flex-col gap-3">
@@ -200,7 +281,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                           d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                                <p>Seleziona almeno un blocco per vedere cosa succede di solito e come posso intervenire.</p>
+                                <p>Seleziona almeno un blocco: la scheda a destra simula come ragiono durante la prima sessione.</p>
                             </div>
                         </template>
 
@@ -236,12 +317,12 @@
             <section class="py-20 bg-surface border-y border-petrol/5">
                 <div class="container mx-auto max-w-4xl px-6 text-center">
                     <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3">
-                        Passo 4 · Tentativi precedenti
+                        Atto IV · Cosa hai già tentato
                     </p>
                     <h2 class="font-serif text-3xl md:text-4xl mb-10 text-petrol">
                         <span x-text="role === 'genitore'
-                            ? 'Cosa avete già provato per migliorare la situazione?'
-                            : 'Cosa hai già provato per migliorare la situazione?'"></span>
+                            ? 'Cosa avete già messo in campo prima di arrivare qui?'
+                            : 'Cosa hai già messo in campo prima di arrivare qui?'"></span>
                     </h2>
 
                     <div class="flex flex-wrap justify-center gap-3 mb-12">
@@ -260,7 +341,7 @@
                     <div class="bg-cream p-8 rounded-xl border border-petrol/10 max-w-2xl mx-auto"
                          x-show="selectedAttempts.length > 0" x-transition>
                         <span class="text-xs font-bold tracking-[0.24em] uppercase text-petrol/60 mb-2 block">
-                            Che cosa significa in pratica
+                            Come lo leggo
                         </span>
                         <p class="text-lg font-serif italic text-petrol" x-text="attemptsCopy"></p>
                     </div>
@@ -271,12 +352,12 @@
             <section class="py-20 md:py-28 px-6">
                 <div class="container mx-auto max-w-5xl">
                     <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3 text-center">
-                        Passo 5 · Obiettivi
+                        Atto V · Desiderio dichiarato
                     </p>
                     <h2 class="font-serif text-4xl md:text-5xl mb-12 text-center text-petrol">
                         <span x-text="role === 'genitore'
-                            ? 'Fra 2–3 mesi, cosa vorresti fosse diverso per tuo figlio?'
-                            : 'Fra 2–3 mesi, cosa vorresti fosse diverso per te?'"></span>
+                            ? 'Fra 2–3 mesi, come deve cambiare l’energia di tuo figlio?'
+                            : 'Fra 2–3 mesi, come deve cambiare la tua energia di studio?'"></span>
                     </h2>
 
                     <div class="grid md:grid-cols-2 gap-4">
@@ -310,16 +391,16 @@
                 <div class="container mx-auto max-w-6xl relative z-10">
                     <div class="text-center mb-16">
                         <p class="text-xs font-semibold tracking-[0.24em] uppercase text-cream/60 mb-3">
-                            Metodo
+                            Atto VI · Metodo socratico
                         </p>
                         <h2 class="font-serif text-4xl md:text-6xl mb-6 text-surface">
                             Non faccio solo ripetizioni. <br>
-                            <span class="text-accent italic">Alleno il modo di pensare.</span>
+                            <span class="text-accent italic">Riallineo il modo in cui pensi.</span>
                         </h2>
                         <p class="text-xl text-cream/80 max-w-2xl mx-auto font-light"
                            x-text="role === 'genitore'
-                                ? 'Così tuo figlio non impara solo la lezione di domani, ma un metodo che resta anche quando cambi materia e insegnante.'
-                                : 'Così non vivi più col panico di dimenticare tutto dopo l’esame: il metodo resta, le prove cambiano.'"></p>
+                                ? 'Così tuo figlio non impara solo la lezione di domani: allena processi, domande e struttura che restano anche quando cambiano materia e insegnante.'
+                                : 'Così non vivi più col panico di dimenticare tutto dopo l’esame: alleni processi, domande e struttura che restano anche quando le prove cambiano.'"></p>
                     </div>
 
                     <div class="grid md:grid-cols-3 gap-8 text-center md:text-left relative">
@@ -363,7 +444,7 @@
                 <div class="container mx-auto max-w-5xl">
                     <div class="text-center mb-12">
                         <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3">
-                            Il tuo livello
+                            Atto VII · Percorso per livello
                         </p>
                         <h2 class="font-serif text-3xl md:text-4xl text-petrol mb-4">
                             <span x-show="selectedLevel === 'elementari'">Come lavoro con bambini delle elementari</span>
@@ -372,7 +453,7 @@
                             <span x-show="selectedLevel === 'universita'">Come lavoro con studenti universitari</span>
                         </h2>
                         <p class="text-petrol/70 max-w-2xl mx-auto text-sm md:text-base">
-                            Il metodo è sempre lo stesso: pensiero chiaro e strutturato. Cambiano gli strumenti, il linguaggio e gli obiettivi in base all’età e al tipo di prove che devi affrontare.
+                            La cornice resta: pensiero chiaro, domande guida, allenamento. Adeguo voce, tempi e strumenti al tuo livello e al carico reale.
                         </p>
                     </div>
 
@@ -462,10 +543,10 @@
             <section id="prima-sessione-info" class="py-20 bg-surface border-t border-petrol/10 px-6">
                 <div class="container mx-auto max-w-4xl text-center">
                     <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3">
-                        Prima sessione gratuita
+                        Atto VIII · Prima sessione gratuita
                     </p>
                     <h2 class="font-serif text-3xl md:text-5xl mb-12 text-petrol">
-                        La prima sessione è gratuita,<br> ma non è una chiacchierata a caso.
+                        La prima sessione è gratuita, ma è già intervento guidato.
                     </h2>
 
                     <div class="grid md:grid-cols-2 gap-8 text-left max-w-3xl mx-auto mb-12">
@@ -543,13 +624,13 @@
                 <div class="container mx-auto max-w-2xl">
                     <div class="text-center mb-10">
                         <p class="text-xs font-semibold tracking-[0.22em] uppercase text-petrol/60 mb-3">
-                            Contatto
+                            Atto IX · Contatto guidato
                         </p>
                         <h2 class="font-serif text-4xl text-petrol mb-4">
-                            Parlami del tuo caso in 60 secondi.
+                            Raccontami il tuo caso in 60 secondi: il resto lo strutturo io.
                         </h2>
                         <p class="text-petrol/60 text-sm md:text-base">
-                            Alcuni campi sono già compilati in base alle tue scelte. Se vuoi, puoi modificarli o aggiungere dettagli.
+                            Alcuni campi sono già compilati in base alle tue scelte. Puoi modificarli: servono solo a ridurre frizione e senso di colpa, non a giudicare.
                         </p>
                     </div>
 
