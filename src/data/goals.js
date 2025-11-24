@@ -4,3 +4,13 @@ export const goalsOptions = [
   { id: 'voti', label: 'Voti più stabili', promise: 'Ridurre al minimo le montagne russe: risultati più coerenti con l’impegno e meno sorprese negative.' },
   { id: 'esposizione', label: 'Saper spiegare bene', promise: 'Riuscire a spiegare con parole proprie ciò che si è studiato, in modo chiaro e ordinato.' }
 ];
+
+const goalsMap = goalsOptions.reduce((acc, goal) => {
+  acc[goal.id] = goal;
+  return acc;
+}, {});
+
+export const goalsRegistry = {
+  options: goalsOptions,
+  byId: goalsMap
+};
